@@ -80,21 +80,21 @@ namespace DotNetCoreWebApiDemo.Extensions
         public static void ConfigureDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             // ************************** Services Configuration *****************************
-            //services.AddScoped<IExceptionService, ExceptionService>();
-            //services.AddScoped<ISerializeService, SerializeService>();
-            //services.AddScoped<ICustomLogger, CustomLogger>();
-            //services.AddScoped<IDeserializeService, DeserializeService>();
-            //services.AddScoped<IAuthorizeRepository, AuthorizeRepository>();
+            services.AddScoped<IExceptionService, ExceptionService>();
+            services.AddScoped<ISerializeService, SerializeService>();
+            services.AddScoped<ICustomLogger, CustomLogger>();
+            services.AddScoped<IDeserializeService, DeserializeService>();
+            services.AddScoped<IAuthorizeRepository, AuthorizeRepository>();
 
-            //// ************************** Servivces Configuration STORE *****************************
-            //services.AddTransient<IUsersService, UsersService>();
-            //services.AddScoped<IStoreUnitOfWork, StoreUnitOfWork>();
+            // ************************** Servivces Configuration STORE *****************************
+            services.AddTransient<IUsersService, UsersService>();
+            services.AddScoped<IStoreUnitOfWork, StoreUnitOfWork>();
 
 
-            //// ************************** Database Configuration *****************************
-            //services.AddDbContext<NTPEP_DATAMINE3Context>(options =>
-            //    options.UseSqlServer(configuration.GetConnectionString("NTPEPConnection"),
-            //sqlServerOptions => sqlServerOptions.CommandTimeout(600)));
+            // ************************** Database Configuration *****************************
+            services.AddDbContext<NTPEP_DATAMINE3Context>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("NTPEPConnection"),
+            sqlServerOptions => sqlServerOptions.CommandTimeout(600)));
         }
 
         //ApiController model state verification skip
