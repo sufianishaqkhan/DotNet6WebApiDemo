@@ -1,11 +1,6 @@
 ﻿using Common.Interface;
 using Entities.ViewModels;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common.Repository
 {
@@ -14,7 +9,7 @@ namespace Common.Repository
         public ResponseModel SerializeIEnumerableObj<T>(IEnumerable<T> data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data, Formatting.None,
+            responseModel.Data = JsonConvert.SerializeObject(data ,Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore

@@ -10,6 +10,7 @@ namespace Common.Pagination
     {
         public Response()
         {
+
         }
         public Response(T data)
         {

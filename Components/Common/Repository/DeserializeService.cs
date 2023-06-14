@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Common.Repository
 {
-    public class DeserializeService : IDeserializeService
+    public class DeserializeService: IDeserializeService
     {
         public IEnumerable<T> DeserializeIEnumerableObj<T>(string data)
         {

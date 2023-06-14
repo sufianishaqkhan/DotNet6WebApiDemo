@@ -1,3 +1,5 @@
+using Common.Interface;
+using Common.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -84,17 +86,17 @@ namespace DotNetCoreWebApiDemo.Extensions
             services.AddScoped<ISerializeService, SerializeService>();
             services.AddScoped<ICustomLogger, CustomLogger>();
             services.AddScoped<IDeserializeService, DeserializeService>();
-            services.AddScoped<IAuthorizeRepository, AuthorizeRepository>();
+            //services.AddScoped<IAuthorizeRepository, AuthorizeRepository>();
 
             // ************************** Servivces Configuration STORE *****************************
-            services.AddTransient<IUsersService, UsersService>();
-            services.AddScoped<IStoreUnitOfWork, StoreUnitOfWork>();
+            //services.AddTransient<IUsersService, UsersService>();
+            //services.AddScoped<IStoreUnitOfWork, StoreUnitOfWork>();
 
 
             // ************************** Database Configuration *****************************
-            services.AddDbContext<NTPEP_DATAMINE3Context>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("NTPEPConnection"),
-            sqlServerOptions => sqlServerOptions.CommandTimeout(600)));
+            //services.AddDbContext<DemoDbContext>(options =>
+            //    options.UseSqlServer(configuration.GetConnectionString("NTPEPConnection"),
+            //sqlServerOptions => sqlServerOptions.CommandTimeout(600)));
         }
 
         //ApiController model state verification skip
