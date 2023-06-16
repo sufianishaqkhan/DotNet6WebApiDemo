@@ -10,8 +10,8 @@ namespace DataAccess.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly DbContext _context;
-        public GenericRepository(DbContext context)
+        protected readonly DemoDbContext _context;
+        public GenericRepository(DemoDbContext context)
         {
             _context = context;
         }

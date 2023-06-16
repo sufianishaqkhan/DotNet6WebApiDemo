@@ -10,9 +10,9 @@ namespace DataAccess.Repository
 {
     public class StoreUnitOfWork : IStoreUnitOfWork
     {
-        private readonly DbContext? _context;
+        private readonly DemoDbContext? _context;
         private readonly ICustomLogger _logger;
-        public StoreUnitOfWork(DbContext context, ICustomLogger logger)
+        public StoreUnitOfWork(DemoDbContext context, ICustomLogger logger)
         {
             _context = context;
             _logger = logger;
