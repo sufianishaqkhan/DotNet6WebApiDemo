@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Interface
 {
-    public interface IStoreUnitOfWork : IDisposable
+    public interface IStoreUnitOfWork
+        //: IDisposable
     {
         //IUsersRepository Users { get; }
-        int Complete();
+        //int Complete();
     }
 }
