@@ -1,5 +1,7 @@
 using Common.Interface;
 using Common.Repository;
+using DataAccess.Interface;
+using DataAccess.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -90,7 +92,7 @@ namespace DotNetCoreWebApiDemo.Extensions
 
             // ************************** Servivces Configuration STORE *****************************
             //services.AddTransient<IUsersService, UsersService>();
-            //services.AddScoped<IStoreUnitOfWork, StoreUnitOfWork>();
+            services.AddScoped<IStoreUnitOfWork, StoreUnitOfWork>();
 
 
             // ************************** Database Configuration *****************************
