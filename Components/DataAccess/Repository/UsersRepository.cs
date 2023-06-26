@@ -209,7 +209,6 @@ namespace DataAccess.Repository
         {           
             if (!string.IsNullOrEmpty(email))
             {
-                email = WebUtility.UrlDecode(email);
                 var mapget = await _context.Users.Where(x => x.EmailAddress == email).FirstOrDefaultAsync();
                 if (mapget != null)
                 {
@@ -250,7 +249,6 @@ namespace DataAccess.Repository
                 {
                     _logger.LogInfo("UpdateUser", "User Not Found in ADM_USER based on ACCOUNT_GUID=" + gid);
 
-                    userDto.EmailAddress = WebUtility.UrlDecode(userDto.EmailAddress);
                     user = await _context.Users.Where(x => x.EmailAddress == userDto.EmailAddress).FirstOrDefaultAsync();
                     if (user != null)
                     {
@@ -309,12 +307,8 @@ namespace DataAccess.Repository
         {
             string ret = string.Empty;
             Guid gid = new Guid(Guid);
-            _logger.LogInfo("UpdateUserEmail", "User Update email precess started");
-
-            email = WebUtility.UrlDecode(email);
-            newEmail = WebUtility.UrlDecode(newEmail);
-
-            _logger.LogInfo("UpdateUserEmail", "User Old Email: "+email);
+            _logger.LogInfo("UpdateUserEmail", "User Update email process started");
+            _logger.LogInfo("UpdateUserEmail", "User Old Email: "+ email);
             _logger.LogInfo("UpdateUserEmail", "User New Email: " + newEmail);
 
             var user = await _context.Users.Where(x => x.AccountGuid == gid && x.EmailAddress == email).FirstOrDefaultAsync();
@@ -325,7 +319,7 @@ namespace DataAccess.Repository
                 _context.Users.Add(user);
                 _context.Entry(user).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-                 _logger.LogInfo("UpdateUserEmail", "User Email updated successfully in AdmUsers EMAIL_ADDRESS=" +  email + ":: to New EMAIL_ADDRESS = "+newEmail);
+                 _logger.LogInfo("UpdateUserEmail", "User Email updated successfully in AdmUsers EMAIL_ADDRESS = " +  email + " :: to New EMAIL_ADDRESS = "+newEmail);
 
                 ret = "Email Updated Successfully";
                
