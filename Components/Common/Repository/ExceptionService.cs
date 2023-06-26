@@ -8,8 +8,8 @@ namespace Common.Repository
         public ResponseModel ControllerException(Exception ex)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.StatusCode = 500;
-            responseModel.Error = ex.Message;
+            responseModel.status_code = 500;
+            responseModel.error = ex.Message;
             return responseModel;
         }
     }

@@ -10,6 +10,7 @@ namespace Entities.DTOS.UsersDto
     {
         public long UserId { get; set; }
         public Guid? AccountGuid { get; set; }
+        public string accountGuid { get; set; }
         public long? StatusId { get; set; }
         public long? RoleId { get; set; }
         public string? EmailAddress { get; set; }

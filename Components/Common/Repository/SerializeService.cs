@@ -9,69 +9,69 @@ namespace Common.Repository
         public ResponseModel SerializeIEnumerableObj<T>(IEnumerable<T> data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data ,Formatting.None,
+            responseModel.data = JsonConvert.SerializeObject(data ,Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            responseModel.StatusCode = 200;
+            responseModel.status_code = 200;
             return responseModel;
         }
 
         public ResponseModel SerializeListObj<T>(List<T> data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data, Formatting.None,
+            responseModel.data = JsonConvert.SerializeObject(data, Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            responseModel.StatusCode = 200;
+            responseModel.status_code = 200;
             return responseModel;
         }
 
         public ResponseModel SerializeObj<T>(T data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data, Formatting.None,
+            responseModel.data = JsonConvert.SerializeObject(data, Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            responseModel.StatusCode = 200;
+            responseModel.status_code = 200;
             return responseModel;
         }
         public ResponseModel Serializeinteger<T>(int data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data, Formatting.None,
+            responseModel.data = JsonConvert.SerializeObject(data, Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            responseModel.StatusCode = 200;
+            responseModel.status_code = 200;
             return responseModel;
         }
         public ResponseModel Serializestring<T>(string data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data, Formatting.None,
+            responseModel.data = JsonConvert.SerializeObject(data, Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            responseModel.StatusCode = 200;
+            responseModel.status_code = 200;
             return responseModel;
         }
         public ResponseModel Serializelong<T>(long data)
         {
             ResponseModel responseModel = new ResponseModel();
-            responseModel.Data = JsonConvert.SerializeObject(data, Formatting.None,
+            responseModel.data = JsonConvert.SerializeObject(data, Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            responseModel.StatusCode = 200;
+            responseModel.status_code = 200;
             return responseModel;
         }
         public string SerializeObjToString<T>(T data)

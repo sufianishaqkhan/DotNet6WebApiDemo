@@ -9,7 +9,7 @@ namespace DataAccess.Interface
     public interface IStoreUnitOfWork
         : IDisposable
     {
-        //IUsersRepository Users { get; }
+        IUsersRepository Users { get; }
         int Complete();
     }
 }

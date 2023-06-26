@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Interface
 {
-    public interface IAuthorizeRepository
+    public interface IAuthorizeService
     {
         bool AuthenticateUser(string pUserName, string pPassword);
         Task<AuthenticationModel> CreateToken(string userName);
