@@ -8,9 +8,9 @@ namespace Entities.ViewModels
 {
     public class ResponseModel
     {
-        //public string? Result { get; set; }
-        public int StatusCode { get; set; }
-        public string? Error { get; set; }
-        public object? Data { get; set; }
+        public string? result { get; set; }
+        public int status_code { get; set; }
+        public string? error { get; set; }
+        public object? data { get; set; }
     }
 }
