@@ -27,11 +27,11 @@ namespace Services.Service
                 return true;
             }
 
-            var EncryptedPassword = _configuration["Api_Password"];
+            //var EncryptedPassword = _configuration["Api_Password"];
             var Password = _configuration["Api_Password"];
             var Username = _configuration["Api_UserName"];
 
-            if ((pUserName == Username) && (Password == EncryptedPassword))
+            if ((pUserName == Username) && (pPassword == Password))
             {
                 return true;
             }
